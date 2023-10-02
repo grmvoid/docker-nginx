@@ -6,7 +6,3 @@ Image based on https://hub.docker.com/_/nginx
 ```bash
 docker pull ghcr.io/bytebits9/nginx:[?TAG]
 ```
-
-## License
-[MIT](LICENSE.md)
-
