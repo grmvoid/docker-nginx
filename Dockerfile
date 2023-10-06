@@ -1,7 +1,7 @@
 FROM nginx:alpine
 
-LABEL org.opencontainers.image.url="https://github.com/bytebits9/nginx"
-LABEL org.opencontainers.image.source=https://github.com/bytebits9/nginx
+LABEL org.opencontainers.image.url="https://github.com/nulldark/nginx"
+LABEL org.opencontainers.image.source=https://github.com/nulldark/nginx
 LABEL org.opencontainers.image.title="nginx"
 LABEL org.opencontainers.image.base.name="docker.io/library/nginx:alpine"
 LABEL org.opencontainers.image.licenses=MIT
