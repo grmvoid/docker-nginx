@@ -7,13 +7,17 @@
 - [`1.24`, `latest`](https://github.com/nulldark/nginx/blob/master/Dockerfile)
 
 # Quick reference
--	**Supported architectures**:
-    `linux/amd64`, `linux/arm64`
--	**Maintained by**:
-    [nulldark](https://github.com/nulldark)
+- **Image based on**:   
+    [ghrc.io/nulldark/alpine](https://github.com/nulldark/nginx)
 
--	**Where to file issues**:
-    [https://github.com/nulldark/nginx/issues](https://github.com/nulldark/nginx/issues?q=)
+- **Supported architectures**:    
+    `linux/amd64`, `linux/arm64`
+
+- **Maintained by**:  
+     [nulldark](https://github.com/nulldark)
+
+- **Where to file issues**:    
+     [https://github.com/nulldark/nginx/issues](https://github.com/nulldark/nginx/issues?q=)
 
 ## How to use this image
 
