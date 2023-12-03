@@ -3,10 +3,10 @@
 ![GitHub Workflow Status (with event)](https://img.shields.io/github/actions/workflow/status/nulldark/nginx/ci.yml)
 ![GitHub release (with filter)](https://img.shields.io/github/v/release/nulldark/nginx)
 
-# Supported tags and respective Dockerfile links
+## Supported tags and respective Dockerfile links
 - [`1.24`, `latest`](https://github.com/nulldark/nginx/blob/master/Dockerfile)
 
-# Quick reference
+## Quick reference
 - **Image based on**:   
     [ghrc.io/nulldark/alpine](https://github.com/nulldark/nginx)
 
@@ -21,13 +21,13 @@
 
 ## How to use this image
 
-## start a nginx instance
+### start a nginx instance
 
 ```console
 $ docker run --name some-nginx -e NGINX_SERVER_ROOT=/var/www -d nginx
 ```
 
-## ... via [`docker-compose`](https://github.com/docker/compose)
+### ... via [`docker-compose`](https://github.com/docker/compose)
 Example `docker-compose.yml` for `nginx`:
 
 ```yaml
