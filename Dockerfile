@@ -49,6 +49,9 @@ RUN if [ ${NGINX_SSL} = true ]; then \
 COPY etc/nginx.conf /etc/nginx/nginx.conf
 COPY etc/conf.d/default.conf /etc/nginx/conf.d/default.conf
 
+## seeding
+RUN sed -i "s#root __NGINX_SERVER_ROOT__;#root $NGINX_SERVER_ROOT;#" /etc/nginx/conf.d/default.conf
+
 EXPOSE 80 443
 
 CMD ["nginx", "-g", "daemon off;"]
