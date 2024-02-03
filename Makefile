@@ -1,10 +1,16 @@
-REPO = ghcr.io/nulldark/nginx
-NGINX_VERSION?=1.25
-TARGET_PLATFORM?=linux/amd64
+SHELL=/bin/bash
 
-ifeq ($(TAG),)
-	TAG ?= $(NGINX_VERSION)
-endif
+export COMPOSE_DOCKER_CLI_BUILD=1
+export DOCKER_BUILDKIT=1
+export BUILDKIT_PROGRESS=plain
+
+NGINX_VERSION ?= 1.25
+
+TAG ?= latest
+PLATFORM ?= linux/amd64
+
+DOCKER_IMAGE_NAME:=nuldark/nginx
+DOCKER_IMAGE:=$(DOCKER_IMAGE_NAME):$(TAG)
 
 build:
 	docker build --tag $(REPO):$(TAG) \
