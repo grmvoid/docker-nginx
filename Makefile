@@ -13,21 +13,17 @@ DOCKER_IMAGE_NAME:=nuldark/nginx
 DOCKER_IMAGE:=$(DOCKER_IMAGE_NAME):$(TAG)
 
 build:
-	docker build --tag $(REPO):$(TAG) \
-		$(NGINX_VERSION)/
+	docker buildx build \
+	   --load \
+       --platform $(PLATFORM) \
+       --tag $(DOCKER_IMAGE) \
+       --file $(NGINX_VERSION)/Dockerfile $(NGINX_VERSION)/
 
-buildx-build-amd64:
-	docker buildx build --load \
-		--platform linux/amd64 \
-		--tag $(REPO):$(NGINX_VERSION) \
-		--file $(NGINX_VERSION)/Dockerfile $(NGINX_VERSION)/
+push:
+	docker buildx build \
+	   --push \
+       --platform $(PLATFORM) \
+       --tag $(DOCKER_IMAGE) \
+       --file $(NGINX_VERSION)/Dockerfile $(NGINX_VERSION)/
 
-buildx-build:
-	docker buildx build --platform $(TARGET_PLATFORM) \
-		--tag $(REPO):$(NGINX_VERSION) \
-		--file $(NGINX_VERSION)/Dockerfile $(NGINX_VERSION)/
-
-buildx-push:
-	docker buildx build --platform=$(TARGET_PLATFORM) --push \
-		--tag $(REPO):$(TAG) \
-		--file $(NGINX_VERSION)/Dockerfile $(NGINX_VERSION)/
+release: build push
