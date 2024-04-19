@@ -1,6 +1,6 @@
 FROM alpine:edge
 
-ENV NGINX_VERSION 1.25.3
+ENV NGINX_VERSION 1.25.4
 
 # install deps and dev-deps
 RUN set -eux; \
