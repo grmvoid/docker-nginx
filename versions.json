@@ -1,11 +1,18 @@
 {
   "include": [
     {
+      "name": "1.27",
+      "os": "ubuntu-latest",
+      "directory": "1.27",
+      "platform": "linux/amd64,linux/arm64",
+      "tags": "nuldark/nginx:1.27,nuldark/nginx:1.27.0,nuldark/nginx:latest"
+    },
+    {
       "name": "1.26",
       "os": "ubuntu-latest",
       "directory": "1.26",
       "platform": "linux/amd64,linux/arm64",
-      "tags": "nuldark/nginx:1.26,nuldark/nginx:1.26.0,nuldark/nginx:latest"
+      "tags": "nuldark/nginx:1.26,nuldark/nginx:1.26.0"
     },
     {
       "name": "1.25",

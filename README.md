@@ -1,7 +1,8 @@
 # Nginx Docker Container Images
 
 ## Supported tags and respective Dockerfile links
-- [`1.26`, `1.26.0`, `latest`](https://github.com/nuldark/docker-nginx/blob/master/1.25/Dockerfile)
+- [`1.27`, `1.27.0`, `latest`](https://github.com/nuldark/docker-nginx/blob/master/1.27/Dockerfile)
+- [`1.26`, `1.26.0`](https://github.com/nuldark/docker-nginx/blob/master/1.26/Dockerfile)
 - [`1.25`, `1.25.5`](https://github.com/nuldark/docker-nginx/blob/master/1.25/Dockerfile)
 - [`1.24`](https://github.com/nuldark/docker-nginx/blob/master/1.24/Dockerfile)
 
