@@ -1,6 +1,6 @@
 FROM alpine:edge
 
-ENV NGINX_VERSION 1.26.0
+ENV NGINX_VERSION 1.26.1
 
 # install deps and dev-deps
 RUN set -eux; \
@@ -86,7 +86,7 @@ RUN set -eux; \
           /usr/lib/nginx \
           /usr/share/nginx
 
-    
+
 # final step
 USER nginx
 WORKDIR /etc/nginx

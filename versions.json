@@ -12,7 +12,7 @@
       "os": "ubuntu-latest",
       "directory": "1.26",
       "platform": "linux/amd64,linux/arm64",
-      "tags": "nuldark/nginx:1.26,nuldark/nginx:1.26.0"
+      "tags": "nuldark/nginx:1.26,nuldark/nginx:1.26.1"
     },
     {
       "name": "1.25",
