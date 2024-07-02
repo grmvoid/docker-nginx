@@ -9,7 +9,7 @@ NGINX_VERSION ?= 1.25
 TAG ?= latest
 PLATFORM ?= linux/amd64
 
-DOCKER_IMAGE_NAME:=nuldark/nginx
+DOCKER_IMAGE_NAME:=nulxrd/nginx
 DOCKER_IMAGE:=$(DOCKER_IMAGE_NAME):$(TAG)
 
 build:
