@@ -1,30 +1,28 @@
-# Nginx Docker Container Images
-
-## Supported tags and respective Dockerfile links
-- [`1.27`, `1.27.0`, `latest`](https://github.com/nulxrd/docker-nginx/blob/master/1.27/Dockerfile)
-- [`1.26`, `1.26.0`](https://github.com/nulxrd/docker-nginx/blob/master/1.26/Dockerfile)
-- [`1.25`, `1.25.5`](https://github.com/nulxrd/docker-nginx/blob/master/1.25/Dockerfile)
-- [`1.24`](https://github.com/nulxrd/docker-nginx/blob/master/1.24/Dockerfile)
+# nginx
 
 ## Quick reference
 - **Image based on**:   
-    [alpine](https://hub.docker.com/_/alpine)
+  [alpine](https://hub.docker.com/_/alpine)
 
 - **Supported architectures**:    
-    `linux/amd64`, `linux/arm64`
+  `linux/amd64`, `linux/arm64`
 
 - **Maintained by**:  
-     [nulxrd](https://github.com/nulxrd)
+  [nulxrd](https://github.com/nulxrd)
 
 - **Where to file issues**:    
-     [https://github.com/nulxrd/docker-nginx/issues](https://github.com/nulxrd/docker-nginx/issues?q=)
+  [https://github.com/nulxrd/docker-nginx/issues](https://github.com/nulxrd/docker-nginx/issues?q=)
+
+## Supported tags and respective Dockerfile links
+
+[`All supported tags see here`](https://hub.docker.com/r/nulxrd/nginx/tags)
 
 ## How to use this image
 
 ### start a nginx instance
 
 ```console
-$ docker run --name some-nginx -d nginx
+$ docker run --name some-nginx -d nulxrd/nginx
 ```
 
 ### ... via [`docker-compose`](https://github.com/docker/compose)
@@ -40,3 +38,6 @@ services:
         ports:
             - "80:80"
 ```
+## LICENSE
+
+View [license](https://nginx.org/LICENSE) information for the software contained in this image.
