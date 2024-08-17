@@ -1,9 +1,9 @@
 FROM alpine:edge
 
-ENV NGINX_VERSION 1.25.5
+ARG NGINX_VERSION=1.27.0
 
-# install deps and dev-deps
 RUN set -eux; \
+  # install deps and dev-deps
     apk add --no-cache \
         gzip \
         pcre \
@@ -17,16 +17,16 @@ RUN set -eux; \
         pcre-dev \
         make \
         openssl-dev; \
-    #create nginx user
+  # create nginx user
     addgroup -g 101 -S nginx && \
     adduser -S -D -H -u 101 -h /var/cache/nginx -s /sbin/nologon -G nginx -g nginx nginx; \
-    #gets and unpack nginx
+  # gets and unpack nginx
     mkdir -p /usr/src/nginx; \
     cd /usr/src/nginx; \
     wget https://nginx.org/download/nginx-$NGINX_VERSION.tar.gz; \
     tar -xvf nginx-${NGINX_VERSION}.tar.gz; \
     cd nginx-${NGINX_VERSION}; \
-    #configure nginx build
+  # configure nginx build
     ./configure \
         --prefix=/etc/nginx \
         --sbin-path=/usr/sbin/nginx \
@@ -60,33 +60,38 @@ RUN set -eux; \
         --with-cc-opt='-Wno-error -fstack-protector-strong -fPIC -fpie -O3 -funroll-loops -ffast-math -finline-functions' \
         --with-ld-opt="-Wl"; \
     make; make install; \
-    # smoke test
+  # smoke test
     nginx -v; \
-    # clean up
+  # clean up
     apk del --no-cache .build-deps; \
     rm -rf /usr/src/nginx; \
     rm -rf /var/cache/apk; \
-    # finalize
-        mkdir -p /usr/share/nginx /var/log/nginx /var/cache/nginx  /usr/lib/nginx/modules; \
-        ln -s usr/lib/nginx/modules /etc/nginx/modules; \
-        ln -sf /dev/stdout /var/log/nginx/access.log; \
-        ln -sf /dev/stderr /var/log/nginx/error.log; \
-        touch /var/run/nginx.pid; \
-        chown -R nginx:nginx \
-          /usr/share/nginx /etc/nginx \
-          /var/run/nginx.pid  \
-          /var/cache/nginx  \
-          /var/log/nginx  \
-          /usr/lib/nginx; \
-        chmod -R 744  \
-          /etc/nginx  \
-          /var/run/nginx.pid  \
-          /var/cache/nginx  \
-          /var/log/nginx  \
-          /usr/lib/nginx \
-          /usr/share/nginx
+  # finalize setup
+    mkdir -p \
+        /usr/share/nginx \
+        /var/log/nginx \
+        /var/cache/nginx  \
+        /usr/lib/nginx/modules; \
+    \
+      ln -s usr/lib/nginx/modules /etc/nginx/modules; \
+      ln -sf /dev/stdout /var/log/nginx/access.log; \
+      ln -sf /dev/stderr /var/log/nginx/error.log; \
+      touch /var/run/nginx.pid; \
+    \
+    chown -R nginx:nginx \
+        /usr/share/nginx /etc/nginx \
+        /var/run/nginx.pid  \
+        /var/cache/nginx  \
+        /var/log/nginx  \
+        /usr/lib/nginx; \
+    chmod -R 744  \
+        /etc/nginx  \
+        /var/run/nginx.pid  \
+        /var/cache/nginx  \
+        /var/log/nginx  \
+        /usr/lib/nginx \
+        /usr/share/nginx
 
-    
 # final step
 USER nginx
 WORKDIR /etc/nginx
