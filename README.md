@@ -6,10 +6,10 @@
   `linux/amd64`, `linux/arm64`
 
 - **Maintained by**:  
-  [sxbrsky](https://github.com/sxbrsky)
+  [grmvoid](https://github.com/grmvoid)
 
 - **Where to file issues**:    
-  [https://github.com/sxbrsky/docker-nginx/issues](https://github.com/sxbrsky/docker-nginx/issues?q=)
+  [https://github.com/grmvoid/docker-nginx/issues](https://github.com/grmvoid/docker-nginx/issues?q=)
 
 ## Supported tags and respective `Dockerfile` links
 
@@ -22,7 +22,7 @@
 ### start a nginx instance
 
 ```bash
-docker run --name some-nginx -d sxbrsky/nginx:latest
+docker run --name some-nginx -d grmvoid/nginx:latest
 ```
 
 ### ... via [`docker-compose`](https://github.com/docker/compose)
@@ -33,7 +33,7 @@ version: '3.1'
 
 services:
     nginx:
-        image: sxbrsky/nginx:1.27.3
+        image: grmvoid/nginx:1.27.3
         restart: always
         ports:
             - "80:80"

@@ -3,13 +3,13 @@ FROM alpine:3.21
 ARG NGINX_VERSION=1.27.3
 
 LABEL org.opencontainers.image.base.name="docker.io/library/alpine:3.21" \
-      org.opencontainers.image.description="Application packaged by sxbrsky" \
-      org.opencontainers.image.documentation="https://github.com/sxbrsky/docker-nginx/tree/master/README.md" \
+      org.opencontainers.image.description="Application packaged by grmvoid" \
+      org.opencontainers.image.documentation="https://github.com/grmvoid/docker-nginx/tree/master/README.md" \
       org.opencontainers.image.licenses="MIT" \
       org.opencontainers.image.ref.name="${NGINX_VERSION}" \
-      org.opencontainers.image.source="https://github.com/sxbrsky/docker-nginx/tree/master/1.27" \
+      org.opencontainers.image.source="https://github.com/grmvoid/docker-nginx/tree/master/1.27" \
       org.opencontainers.image.title="nginx" \
-      org.opencontainers.image.vendor="sxbrsky" \
+      org.opencontainers.image.vendor="grmvoid" \
       org.opencontainers.image.version="${NGINX_VERSION}"
 
 RUN set -eux; \
