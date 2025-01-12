@@ -74,8 +74,11 @@ RUN set -eux; \
     nginx -v; \
   # clean up
     apk del --no-cache .build-deps; \
-    rm -rf /usr/src/nginx; \
-    rm -rf /var/cache/apk; \
+    rm -rf \
+      /usr/src/nginx \
+      /tmp/* \
+      /var/tmp/* \
+      /var/cache/apk/*; \
   # finalize setup
     mkdir -p \
         /usr/share/nginx \
