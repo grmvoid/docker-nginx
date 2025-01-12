@@ -106,7 +106,10 @@ RUN set -eux; \
         /usr/share/nginx
 
 # final step
-USER nginx
-WORKDIR /etc/nginx
+COPY docker-entrypoint /
+ENTRYPOINT ["/docker-entrypoint"]
 
+EXPOSE 80
 STOPSIGNAL SIGQUIT
+
+CMD [ "nginx", "-g", "daemon off;" ]
