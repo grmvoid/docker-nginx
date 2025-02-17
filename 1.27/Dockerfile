@@ -1,6 +1,6 @@
 FROM alpine:3.21
 
-ARG NGINX_VERSION=1.27.3
+ARG NGINX_VERSION=1.27.4
 
 LABEL org.opencontainers.image.base.name="docker.io/library/alpine:3.21" \
       org.opencontainers.image.description="Application packaged by grmvoid" \
