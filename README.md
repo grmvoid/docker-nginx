@@ -1,43 +1,39 @@
+# Nginx Docker Container Image
+
+A lightweight Nginx container image based on Alpine Linux, building with the Clang and LLVM.
+
 ## Quick reference
-- **Image based on**:   
-  [alpine](https://hub.docker.com/_/alpine)
+- **Image based on**: [alpine](https://hub.docker.com/_/alpine)
+- **Supported architectures**: `linux/amd64`, `linux/arm64`
+- **Maintained by**: [grmvoid](https://github.com/grmvoid)
+- **Issues**: [https://github.com/grmvoid/docker-nginx/issues](https://github.com/grmvoid/docker-nginx/issues?q=)
 
-- **Supported architectures**:    
-  `linux/amd64`, `linux/arm64`
+## Usage
 
-- **Maintained by**:  
-  [grmvoid](https://github.com/grmvoid)
-
-- **Where to file issues**:    
-  [https://github.com/grmvoid/docker-nginx/issues](https://github.com/grmvoid/docker-nginx/issues?q=)
-
-## Supported tags and respective `Dockerfile` links
-
-- [`1.27.3`, `1.27`](https://github.com/grmvoid/docker-nginx/blob/master/1.27/Dockerfile)
-- [`1.26.2`, `1.26`](https://github.com/grmvoid/docker-nginx/blob/master/1.26/Dockerfile)
-- [`1.25.5`, `1.25`](https://github.com/grmvoid/docker-nginx/blob/master/1.25/Dockerfile)
-
-## How to use this image
-
-### start a nginx instance
-
+### Pull the Image
+To get started, pull the specify a version Nginx image:
 ```bash
-docker run --name some-nginx -d grmvoid/nginx:1.27.3
+  docker pull grmvoid/nginx:1.27.4
 ```
 
-### ... via [`docker-compose`](https://github.com/docker/compose)
+### Running a Container
+You can run the Nginx container interactively using the following command:
+```bash
+  docker run --name nginx -d grmvoid/nginx:1.27.4
+```
+
+### Running via [`docker-compose`](https://github.com/docker/compose)
 Example `docker-compose.yml` for `nginx`:
-
 ```yaml
-version: '3.1'
-
 services:
     nginx:
-        image: grmvoid/nginx:1.27.3
+        image: grmvoid/nginx:1.27.4
         restart: always
         ports:
             - "80:80"
 ```
-## LICENSE
 
-View [license](https://nginx.org/LICENSE) information for the software contained in this image.
+## LICENSE
+This repository follows the [Nginx License](https://nginx.org/LICENSE). Individual dependencies may have their own licensing terms.
+
+Additionally, the contents of this repository are licensed under the [MIT License](LICENSE).
